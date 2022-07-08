@@ -1,0 +1,78 @@
+@charset "utf-8";
+/* CSS Document */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-image: url("../images/background/topography.svg");
+  background-attachment: fixed;
+  background-repeat: repeat;
+  font-family: 'Poppins';
+}
+div.formC {
+  width: 400px;
+  max-width: 86%;
+  min-height: 300px;
+  padding: 1rem;
+  border-radius: 6px;
+  background: rgb(225, 225, 225, .05);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  box-shadow: 0 8px 10px 0 rgb(0, 0, 0, .06);
+  border: 5px solid #eee;
+  margin: 10vh auto;
+  overflow: hidden;
+}
+div.formC > .title {
+  text-align: center;
+  margin: 3rem auto;
+}
+div.formC > form {
+  display: block;
+}
+div.formC > form > label {
+  font-size: 90%;
+}
+div.formC > form > input, div.formC > form > button {
+  outline: none;
+  border: none;
+  display: block;
+  font-size: 18px;
+}
+div.formC > form > input {
+  width: 100%;
+  height: 3rem;
+  padding: 0 1rem;
+  color: #171819;
+  background: rgb(0, 0, 0, .1);
+  border-bottom: 1px solid #171819;
+  margin: 1rem auto;
+}
+div.formC > form > input:hover {
+  transition: 400ms;
+  border-bottom: 1px solid #171819;
+}
+div.formC > form > button {
+  cursor: pointer;
+  background: rgb(0, 0, 0, .5);
+  padding: .6rem 1.4rem;
+  border-radius: 2px;
+}
+div.bottom {
+  font-size: 80%;
+  text-align: center;
+  margin: 5rem auto 1rem auto;
+}
+div.bottom > a {
+  text-decoration: underline;
+}
+@media only screen and (min-width: 768px) {
+  div.formC {
+    padding: 1rem 2rem;
+  }
+  div.formC > form > button {
+    margin: 2rem 0;
+  }
+}

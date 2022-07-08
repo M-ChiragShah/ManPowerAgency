@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+	  <link rel="stylesheet" href="assets/css/stylesheet.css">
+	  <link rel="stylesheet" href="assets/css/login_stylesheet.css">
+<link rel="stylesheet" href="assets/css/fontAwesome.css">
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  </head>
+  <style>
+    
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+
+
+        body{
+            background-color: rgb(80, 191, 255);
+            margin: 0;
+            padding: 0;
+        }
+
+        .login-container{
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        position: absolute;
+        height: 300px;
+        width: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #aacde1;
+        border: 1px rgba(255, 127, 80, 0) solid;
+        border-radius: 20px;
+        box-shadow: 0px 15px 20px rgba(30, 47, 58, 0.5);
+        /*animation: exam 4s infinite ease-in;*/
+     
+        }
+        
+       /* @keyframes exam {
+            0% {
+                background-color: cadetblue;
+            }
+            25% {
+                background-color: chocolate;
+            }
+            50% {
+                background-color: cornflowerblue;
+
+            }
+            75% {
+                background-color: crimson;
+
+            }
+            100% {
+                background-color: cadetblue;
+            }
+        }*/
+
+        
+        .name {
+        display: block;
+        width: 250px;
+        height: 38px;
+        outline: none;
+        border-radius: 10px;
+        border: none;
+        font-size: 18px;
+        background: transparent;
+        border-bottom: 1px rgb(17, 52, 80) solid;
+        font-family: Poppins,sans-serif;
+        padding: 7px;
+        color: rgb(16, 52, 82);
+        position: relative;
+        left: 7%;
+        }
+
+        .name::placeholder{
+            color: rgba(65, 87, 100, 0.616);
+            font-family: Poppins,sans-serif;
+            font-weight: 300;
+        }
+
+        h1{
+            position: absolute;
+            justify-content: center;
+            top: 0%;
+            font-family: Poppins,sans-serif;
+            color: #3a6687;
+        }
+        h2{
+            position: absolute;
+            justify-content: center;
+            font-family: Poppins,sans-serif;
+            color:#47130094;
+            top: -40%;
+            font-size: 45px;
+            border-bottom: 3px dotted #47130094;
+
+
+        }
+
+
+        #submit {
+            position: absolute;
+            top: 79%;
+            left: 35.5%;
+            border: none;
+            width: 82px;
+            height: 28px;
+            outline: none;
+            display: block;
+            font-size: 16px;
+            background: #5585a9;
+            font-family: 'POPPINS',sans-serif;
+            border-radius: 30px;
+            color: #aacde9;
+            box-shadow: 6px 5px 20px #3a66879b;
+            cursor: pointer;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+        }
+
+
+        #submit:hover {
+            transition: 0.2s ease-out;
+            background-color: rgba(34, 53, 71, 0.609);
+            width: 200px;
+            transform: translate(-56px);
+            -webkit-tap-highlight-color: transparent;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            box-shadow: 6px 5px 20px #3a66879b;
+            
+        }
+        #submit:active {
+            transition: 0.5s ease;
+            box-shadow: 6px 5px 20px #2f2f2ff8;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+
+        p {
+            position: absolute;
+            font-family: Poppins,sans-serif;
+            top: 90%;
+            font-size: 12px;
+        }
+        a {
+            text-decoration: none;
+            color: #265375 ;
+            
+        }
+
+        a:hover {
+            text-decoration: rgb(23, 86, 168) underline ;
+            transition: 0.2s ease-in-out;
+            font-size: 15px;
+
+        }
+        a:active {
+            color: rgb(25, 25, 66);
+            font-size: 15px;
+        }
+
+
+        input.name:focus {
+        box-shadow: 0px 6px 20px #243a548f;
+        border: none;
+        transition: .2s;
+        }
+
+        input:internal-autofill-selected {
+            appearance: menulist-button;
+            background-color: rgb(3, 23, 59) !important;
+            background-image: none !important;
+            color: -internal-light-dark(black, rgba(255, 255, 255, 0)) !important;
+        }
+
+        #name1 {
+        display: block;
+        width: 250px;
+        height: 38px;
+        outline: none;
+        border-radius: 10px;
+        border: none;
+        font-size: 18px;
+        background: transparent;
+        border-bottom: 1px rgb(80, 32, 17) solid;
+        font-family: Poppins,sans-serif;
+        padding: 7px;
+        color: rgb(82, 37, 16);
+        }
+
+        #name1::placeholder{
+            color: rgba(100, 74, 65, 0.616);
+            font-family: Poppins,sans-serif;
+            font-weight: 300;
+        }
+
+        input#name1:focus {
+        box-shadow: 0px 6px 20px #5431248f;
+        border: none;
+        transition: .2s;
+        }
+
+  </style>
+  
+  <body>
+    <header class="">
+  <nav class="navbar navbar-expand-lg">
+    <div class="container"> <a class="navbar-brand" href="index.html">
+      <h2 class="full-text">ManPower Agency</h2>
+      <h2 class="short-text">M.P.A</h2>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto nav-right" >
+          <li class="nav-item active"> <a class="nav-link" href="index.html">Home<span class="sr-only"></span> </a> </li>
+          <li class="nav-item"> <a class="nav-link" href="index.html#contact_us">Contact</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="about_us.html">About Us</a> </li>
+          <li class="nav-item" > <a class="nav-link" href="login.html"><i class="fa fa-user" style="font-size: 20px"></i> Login</a> </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+	  <br>
+	  	  <br>
+	
+        <div class="login-container">
+          
+          <h1>Sign-In</h1>
+          <p id="p">Don't Have an Account  <a href="signup.html"> Sign Up</a></p>
+          <legend>
+              
+  
+           <input type="number" value="" id="user_id" class="name" placeholder="user_id" >
+           <input type="email" value="" id="email" class="name" placeholder="E-mail/Phone" >
+           <input type="password" id="pw" class="name" placeholder="Password">
+           <input type="submit" id="submit" value="Login" onclick="valid()" >
+           <p id="status"></p>
+           
+        
+  
+      </div>
+
+    
+  
+
+	  
+	  <!--  <div class="formC">
+  <h2 class="title"> Login Page </h2>
+  <form>
+    <label>USER Id</label>
+    <input type="number" placeholder="user_id" id="user_id" value="">
+    <label>Email</label>
+    <input type="email" placeholder="email" id="email" value="">
+    <label>Password</label>
+    <input type="password" id="pw" placeholder="password" value="">
+    <button  id="button"  onclick="valid()">Login</button>
+  </form>
+ 
+	   
+	   <footer>
+		   
+  <div class="col-md-12">
+    <p>Copyright © 2022  Co., Ltd.</p>
+  </div>
+</footer> -->
+	  
+    
+    <script src="script.js"></script>
+    
+    <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="text-align: center">
+    <input type="text" value="" placeholder="enter job" id="search" />
+    <button id="button" onclick="submit()">Search</button>
+    <button id="fetch" onclick="fetch()">fetch</button>
+    <div id="desc"></div>
+    <script>
+      let db = openDatabase("search", "1.0", "test db", 2 * 1024 * 1024);
+      db.transaction(function (tx) {
+        tx.executeSql("create table job(job varchar(20))");
+      });
+
+      function submit() {
+        let search = document.getElementById("search").value;
+        let button = document.getElementById("button");
+        db.transaction(function (tx) {
+          tx.executeSql("insert into job (job) values(?)", [search]);
+          document.querySelector("#desc").innerHTML = "";
+        });
+      }
+
+      function fetch() {
+        let fetch = document.getElementById("fetch");
+        let search = document.getElementById("search").value;
+        let arr=[]
+
+        let desc = document.getElementById("desc");
+        db.transaction(function (tx) {
+          tx.executeSql(
+            `SELECT * FROM job where job="${search}"`,
+            [],
+            function (tx, results) {
+              var len = results.rows.length,
+                i;
+              msg = "<p>Found rows: " + len + "</p>";
+              document.querySelector("#desc").innerHTML += msg;
+
+              for (i = 0; i < len; i++) {
+                msg = "<p><b>" + results.rows.item(i).job + "</b></p>";
+                document.querySelector("#desc").innerHTML += msg;
+                arr[i]=results.rows.item(i).job
+              }
+              
+
+            },
+            null
+          );
+        });
+     console.log(arr) }
+    </script>
+  </body>
+</html>
